@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mostPopularFragment">
+
+    <fragment
+        android:id="@+id/mostPopularFragment"
+        android:name="com.omranic.nytimesmostpopular.ui.fragment.MostPopularFragment"
+        android:label="@string/most_popular_fragment_label"
+        tools:layout="@layout/fragment_most_popular" >
+        <action
+            android:id="@+id/action_mostPopularFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.omranic.nytimesmostpopular.ui.fragment.AboutFragment"
+        android:label="@string/about_fragment_label"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.omranic.nytimesmostpopular.ui.fragment.DetailsFragment"
+        android:label="@string/details_fragment_label"
+        tools:layout="@layout/fragment_details" />
+</navigation>

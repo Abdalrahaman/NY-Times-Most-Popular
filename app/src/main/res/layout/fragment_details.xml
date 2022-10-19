@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mostPopularViewModel"
+            type="com.omranic.nytimesmostpopular.ui.viewmodel.MostPopularViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.fragment.DetailsFragment">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{mostPopularViewModel.articleItemSelected.media[0].mediaMetadata[0].url}"
+            app:placeholder="@{@drawable/ic_launcher_background}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="5dp"
+            android:paddingHorizontal="@dimen/layout_spacing"
+            android:paddingVertical="@dimen/item_space_10dp"
+            android:text="@{mostPopularViewModel.articleItemSelected.title}"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            tools:text="Acquittal of Russia Analyst Deals Final Blow to Trump-Era Prosecutor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/item_space_10dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/layout_spacing">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingHorizontal="5dp"
+                android:text="@{mostPopularViewModel.articleItemSelected.byline.substring(3)}"
+                android:textSize="15sp"
+                tools:text="By Charlie Savage and Linda Qiu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{mostPopularViewModel.articleItemSelected.published_date}"
+                android:textSize="15sp"
+                tools:text="2017-06-23" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="5dp"
+            android:paddingHorizontal="@dimen/layout_spacing"
+            android:paddingVertical="@dimen/layout_spacing"
+            android:text="@{mostPopularViewModel.articleItemSelected.abstract}"
+            android:textSize="15sp"
+            tools:text="John H. Durham, the special counsel who investigated the Russia inquiry for more than three years, failed to develop any cases that resulted in convictions." />
+
+
+    </LinearLayout>
+
+</layout>

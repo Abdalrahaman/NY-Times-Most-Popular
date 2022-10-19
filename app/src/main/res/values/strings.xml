@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">NY Times Most Popular</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="about">About</string>
+    <string name="search">Search</string>
+    <string name="_1_day">1 Day</string>
+    <string name="_7_days">7 Days</string>
+    <string name="_30_days">30 Days</string>
+    <string name="about_text">is an American daily newspaper based in New York City with a worldwide readership.\n\n The app allowed users to read the paper ( Most Popular ) their mobile device enabling them even when they were unable to receive a signal.</string>
+
+    <string name="most_popular_fragment_label">NY Times Most Popular</string>
+    <string name="about_fragment_label">About NY Times</string>
+    <string name="details_fragment_label">Article Details</string>
+</resources>
