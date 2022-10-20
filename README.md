@@ -8,3 +8,15 @@ When you open the application, a group of articles will appear with time period 
   <img src="https://user-images.githubusercontent.com/35526918/196950705-ce348435-fead-4b2a-9407-cebae48c2ca5.jpg" width=250>
   <img src="https://user-images.githubusercontent.com/35526918/196950760-2c76402b-bac6-4ad6-82c0-b16ae28a38b1.jpg" width=250>
 </p>
+
+You can search for any article by its title.
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/35526918/196952952-5190269a-770c-4185-a8ae-49d0c3b6531f.jpg" width=250>
+</p>
+
+To get articles during the week or month, you will click on the list and make a selection.
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/35526918/196952977-0e11c890-d4c1-434b-aec0-98f6e6886fae.jpg" width=250>
+</p>
