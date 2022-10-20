@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.omranic.nytimesmostpopular.data.model.Resource
 import com.omranic.nytimesmostpopular.data.model.pojo.Article
-import com.omranic.nytimesmostpopular.data.model.pojo.MostPopularResponse
+import com.omranic.nytimesmostpopular.data.model.pojo.response.MostPopularResponse
 import com.omranic.nytimesmostpopular.data.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -24,9 +24,16 @@ class MostPopularViewModel @Inject constructor(private val mainRepository: MainR
     val articleItemSelected: LiveData<Article>
         get() = _articleItemSelected
 
-    fun getMostViewedArticles(
+    fun getMostPopularArticlesView(period: Int) =
+        viewModelScope.launch {
+            if (setOf(1, 7, 30).contains(period)) {
+                getMostPopularArticlesFromNetwork(period)
+            }
+        }
+
+    private suspend fun getMostPopularArticlesFromNetwork(
         period: Int
-    ) = viewModelScope.launch {
+    ) {
         mostPopularResult.postValue(Resource.Loading())
         try {
             val response = mainRepository.getMostViewedArticles(period)
@@ -53,6 +60,7 @@ class MostPopularViewModel @Inject constructor(private val mainRepository: MainR
         }
         return Resource.Error("error" + response.message())
     }
+
 
     fun onArticleItemSelected(article: Article) {
         _articleItemSelected.value = article

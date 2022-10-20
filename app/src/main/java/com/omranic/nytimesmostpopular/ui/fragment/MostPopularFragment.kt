@@ -20,7 +20,6 @@ import timber.log.Timber
 import java.util.*
 import javax.inject.Inject
 
-
 @AndroidEntryPoint
 class MostPopularFragment :
     BaseFragment<FragmentMostPopularBinding>(FragmentMostPopularBinding::inflate),
@@ -42,7 +41,7 @@ class MostPopularFragment :
         initViews()
 
         // Initialize loading articles with time period 1 day
-        mostPopularViewModel.getMostViewedArticles(1)
+        mostPopularViewModel.getMostPopularArticlesView(1)
 
         handleObservers()
     }
@@ -86,17 +85,17 @@ class MostPopularFragment :
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.period_1_day -> {
-            mostPopularViewModel.getMostViewedArticles(1)
+            mostPopularViewModel.getMostPopularArticlesView(1)
             true
         }
 
         R.id.period_7_day -> {
-            mostPopularViewModel.getMostViewedArticles(7)
+            mostPopularViewModel.getMostPopularArticlesView(7)
             true
         }
 
         R.id.period_30_day -> {
-            mostPopularViewModel.getMostViewedArticles(30)
+            mostPopularViewModel.getMostPopularArticlesView(30)
             true
         }
 
